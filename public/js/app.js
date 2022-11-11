@@ -726,40 +726,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -815,7 +781,15 @@ __webpack_require__.r(__webpack_exports__);
         return this.$store.state.user;
       },
       set: function set(value) {
-        this.$store.commit('SET_USER', value);
+        this.$store.commit("SET_USER", value);
+      }
+    },
+    market: {
+      get: function get() {
+        return this.$store.state.market;
+      },
+      set: function set(value) {
+        this.$store.commit("SET_MARKET", value);
       }
     }
   },
@@ -839,7 +813,7 @@ __webpack_require__.r(__webpack_exports__);
     updatePassword: function updatePassword() {
       var _this2 = this;
       this.passwordupdating = true;
-      axios.post("/datafromapi/changeuserpassword", {
+      axios.post("/api/changeuserpassword", {
         currentpassword: this.form.currentpassword,
         newpassword: this.form.newpassword,
         newpasswordconfirm: this.form.newpasswordconfirm
@@ -3054,7 +3028,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.circle-cropper {\n  width: 100%;\n  background: #222;\n  height: 500px;\n}\n.circle-cropper .__preview {\n  border: solid 1px rgba(white, 0.15);\n}\n.avatarimg {\n}\n.avatararea {\n  width: -moz-fit-content;\n  width: fit-content;\n  padding: 35px;\n  margin: auto;\n  position: relative;\n  margin-bottom: 50px;\n}\n.changeavatarhover {\n  position: absolute;\n  cursor: pointer;\n  width: 100%;\n  height: 70px;\n  bottom: 0;\n  background-color: rgba(219, 231, 219, 0.63);\n}\n.avataruploaddiv {\n  margin: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n}\n.profile-line {\n  display: flex;\n  padding: 15px 0 15px 0;\n  border-bottom: 1px solid lightgray;\n}\n.profile-line b {\n  padding-right: 10px;\n}\n.prflbtn {\n  margin: 18px auto 0;\n  display: flex;\n  justify-content: center;\n}\n.customcardtext {\n  min-height: 677px;\n}\n.oneline {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.circle-cropper {\r\n  width: 100%;\r\n  background: #222;\r\n  height: 500px;\n}\n.circle-cropper .__preview {\r\n  border: solid 1px rgba(white, 0.15);\n}\n.avatarimg {\n}\n.avatararea {\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n  padding: 35px;\r\n  margin: auto;\r\n  position: relative;\r\n  margin-bottom: 50px;\n}\n.changeavatarhover {\r\n  position: absolute;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  height: 70px;\r\n  bottom: 0;\r\n  background-color: rgba(219, 231, 219, 0.63);\n}\n.avataruploaddiv {\r\n  margin: auto;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100%;\n}\n.market_line {\r\n  display: flex;\r\n  padding: 15px 0 15px 0;\r\n  border-bottom: 1px solid lightgray;\n}\n.market_line b {\r\n  padding-right: 10px;\n}\n.prflbtn {\r\n  margin: 18px auto 0;\r\n  display: flex;\r\n  justify-content: center;\n}\n.customcardtext {\r\n  min-height: 677px;\n}\n.oneline {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -24956,7 +24930,7 @@ var render = function () {
                                                               },
                                                               [
                                                                 _vm._v(
-                                                                  "\n                            mdi-account-circle\n                          "
+                                                                  " mdi-account-circle "
                                                                 ),
                                                               ]
                                                             ),
@@ -25041,7 +25015,7 @@ var render = function () {
                                                                     },
                                                                     [
                                                                       _vm._v(
-                                                                        "\n                              mdi-arrow-up-bold-box-outline\n                            "
+                                                                        "\n                                mdi-arrow-up-bold-box-outline\n                              "
                                                                       ),
                                                                     ]
                                                                   ),
@@ -25168,11 +25142,11 @@ var render = function () {
                                                 },
                                                 [
                                                   _vm._v(
-                                                    " " +
+                                                    "\n                        " +
                                                       _vm._s(
                                                         _vm.$t("updatePassword")
                                                       ) +
-                                                      " "
+                                                      "\n                      "
                                                   ),
                                                 ]
                                               ),
@@ -25243,61 +25217,23 @@ var render = function () {
                                           _vm._v(" "),
                                           _c(
                                             "div",
-                                            { staticClass: "profile-line" },
+                                            { staticClass: "market_line" },
                                             [
-                                              _c("b", [_vm._v("Role :")]),
+                                              _c("b", [
+                                                _vm._v(
+                                                  _vm._s(_vm.$t("marketName")) +
+                                                    " :"
+                                                ),
+                                              ]),
                                               _vm._v(" "),
-                                              _vm.user.type == 1
+                                              _vm.market != null
                                                 ? _c("p", [
                                                     _vm._v(
-                                                      _vm._s(_vm.$t("admin"))
+                                                      _vm._s(_vm.market.name) +
+                                                        " "
                                                     ),
                                                   ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _vm.user.type == 2
-                                                ? _c("p", [
-                                                    _vm._v(
-                                                      _vm._s(
-                                                        _vm.$t("superAdmin")
-                                                      ) + " "
-                                                    ),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _vm.user.type == 3
-                                                ? _c("p", [
-                                                    _vm._v(
-                                                      _vm._s(
-                                                        _vm.$t("rootAdmin")
-                                                      ) + " "
-                                                    ),
-                                                  ])
-                                                : _vm._e(),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "profile-line" },
-                                            [
-                                              _c("b", [_vm._v("Team :")]),
-                                              _vm._v(" "),
-                                              _vm.user.team == 1
-                                                ? _c("p", [_vm._v("Asofta")])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _vm.user.team == 2
-                                                ? _c("p", [
-                                                    _vm._v(
-                                                      "ACO Recycling Team"
-                                                    ),
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _vm.user.team == 3
-                                                ? _c("p", [_vm._v("Rosroca")])
-                                                : _vm._e(),
+                                                : _c("p", [_vm._v("-")]),
                                             ]
                                           ),
                                         ],
@@ -25324,7 +25260,7 @@ var render = function () {
                                             },
                                             [
                                               _vm._v(
-                                                " " +
+                                                "\n                      " +
                                                   _vm._s(
                                                     _vm.$t("updatePassword")
                                                   )
@@ -25388,9 +25324,9 @@ var render = function () {
                                             { staticClass: "text-left" },
                                             [
                                               _vm._v(
-                                                "\n                    " +
+                                                "\n                      " +
                                                   _vm._s(_vm.$t("event")) +
-                                                  "\n                  "
+                                                  "\n                    "
                                               ),
                                             ]
                                           ),
@@ -25400,9 +25336,8 @@ var render = function () {
                                             { staticClass: "text-left" },
                                             [
                                               _vm._v(
-                                                "\n                      " +
-                                                  _vm._s(_vm.$t("systemTime")) +
-                                                  " (UTC 0)\n                  "
+                                                _vm._s(_vm.$t("systemTime")) +
+                                                  " (UTC 0)"
                                               ),
                                             ]
                                           ),
@@ -25419,13 +25354,13 @@ var render = function () {
                                                 item.type == 0
                                                   ? _c("div", [
                                                       _vm._v(
-                                                        " " +
+                                                        "\n                        " +
                                                           _vm._s(
                                                             _vm.$t(
                                                               "loggedOutOfDashboard"
                                                             )
                                                           ) +
-                                                          "  "
+                                                          "\n                      "
                                                       ),
                                                     ])
                                                   : _vm._e(),
@@ -25433,13 +25368,13 @@ var render = function () {
                                                 item.type == 1
                                                   ? _c("div", [
                                                       _vm._v(
-                                                        " " +
+                                                        "\n                        " +
                                                           _vm._s(
                                                             _vm.$t(
                                                               "loginToDashboard"
                                                             )
                                                           ) +
-                                                          "  "
+                                                          "\n                      "
                                                       ),
                                                     ])
                                                   : _vm._e(),
@@ -25447,13 +25382,9 @@ var render = function () {
                                                 item.type == 2
                                                   ? _c("div", [
                                                       _vm._v(
-                                                        " " +
-                                                          _vm._s(
-                                                            _vm.$t(
-                                                              "loginFailure"
-                                                            )
-                                                          ) +
-                                                          "  "
+                                                        _vm._s(
+                                                          _vm.$t("loginFailure")
+                                                        )
                                                       ),
                                                     ])
                                                   : _vm._e(),
@@ -25461,13 +25392,13 @@ var render = function () {
                                                 item.type == 3
                                                   ? _c("div", [
                                                       _vm._v(
-                                                        " " +
+                                                        "\n                        " +
                                                           _vm._s(
                                                             _vm.$t(
                                                               "passwordChangedOnDashboard"
                                                             )
                                                           ) +
-                                                          "  "
+                                                          "\n                      "
                                                       ),
                                                     ])
                                                   : _vm._e(),
@@ -25475,13 +25406,13 @@ var render = function () {
                                                 item.type == 4
                                                   ? _c("div", [
                                                       _vm._v(
-                                                        " " +
+                                                        "\n                        " +
                                                           _vm._s(
                                                             _vm.$t(
                                                               "createdANewPasswordViaEmail"
                                                             )
                                                           ) +
-                                                          "  "
+                                                          "\n                      "
                                                       ),
                                                     ])
                                                   : _vm._e(),
@@ -25502,7 +25433,7 @@ var render = function () {
                               ],
                               null,
                               false,
-                              3747526257
+                              2457144922
                             ),
                           }),
                         ],
@@ -25533,7 +25464,7 @@ var render = function () {
                             [
                               _vm._v(
                                 _vm._s(_vm.$t("cropYourAvatar")) +
-                                  " \n         "
+                                  "\n              "
                               ),
                               _c(
                                 "div",
@@ -25546,11 +25477,11 @@ var render = function () {
                                     },
                                     [
                                       _vm._v(
-                                        "\n         " +
+                                        "\n                  " +
                                           _vm._s(
                                             _vm.$t("cropAndUpdateAvatar")
                                           ) +
-                                          "   \n           "
+                                          "\n                "
                                       ),
                                     ]
                                   ),
@@ -93695,9 +93626,16 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_4__["default"].Store({
   state: {
     user: window.user,
     notifications: [],
+    account_activities: [],
     market: null
   },
   mutations: {
+    SET_MARKET: function SET_MARKET(state, market) {
+      state.market = market;
+    },
+    SET_ACCOUNT_ACTIVITIES: function SET_ACCOUNT_ACTIVITIES(state, account_activities) {
+      state.account_activities = account_activities;
+    },
     SET_USER: function SET_USER(state, user) {
       state.user = user;
     },
